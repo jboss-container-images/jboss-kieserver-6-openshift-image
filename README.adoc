@@ -1,0 +1,11 @@
+# JBoss BRMS/BPMSuite KIE Server (execution server) for OpenShift container image
+
+This is a base image for both link:https://github.com/jboss-container-images/jboss-decisionserver-6-openshift-image[BRMS Decision Server 6 OpenShift container image]
+and link:https://github.com/jboss-container-images/jboss-processserver-6-openshift-image[BPMSuite Process Server 6 OpenShift container image].
+It is not currently released or supported as an independent image for end-users. 
+
+NOTE: Extends link:https://github.com/jboss-container-images/jboss-eap-6-openshift-image[jboss-eap-6-openshift-image]
+
+# License
+
+See link:LICENSE[LICENSE] file.
