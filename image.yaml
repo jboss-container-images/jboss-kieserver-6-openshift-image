@@ -143,7 +143,7 @@ sources:
     - artifact: openshift-kieserver-web-1.1.0.Final-redhat-1.jar
       md5: 400cc13cdc0bd2d6504f1692b0dfd198
 dogen:
-    version: 2.1.0
+    version: 2.4.1
     plugins:
         dist_git:
             repo: jboss-kieserver-6-docker
