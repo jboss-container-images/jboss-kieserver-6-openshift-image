@@ -120,7 +120,7 @@ envs:
       value: "6.4.0.GA"
       description: "BPM Suite base installation version."
     - name: "BPMSUITE_PATCH_VERSION"
-      value: "6.4.4"
+      value: "6.4.5"
       description: "BPM Suite patch upgrade version."
     - name: "OPENSHIFT_KIESERVER_VERSION"
       value: "1.2.0.Final-redhat-1"
@@ -136,8 +136,8 @@ sources:
       md5: 5621266e64f6ae1d6740940ec279a1ff
     - artifact: jboss-bpmsuite-6.4.0.GA-supplementary-tools.zip
       md5: 423bbcbaaa487e7437785b077c4847e5
-    - artifact: jboss-bpmsuite-6.4.4-patch.zip
-      md5: b7046200f75090e39ac160f6a04ab282
+    - artifact: jboss-bpmsuite-6.4.5-patch.zip
+      md5: 2cbda304ddcd4c3c848da296d01425d6
     - artifact: openshift-kieserver-common-1.2.0.Final-redhat-1.jar
       md5: 4eee0a1e2c0970362ffe65da45b44b1c
     - artifact: openshift-kieserver-jms-1.2.0.Final-redhat-1.jar
