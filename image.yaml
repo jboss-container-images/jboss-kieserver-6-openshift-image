@@ -1,6 +1,6 @@
 name: "jboss-kieserver-6/kieserver64-openshift"
 version: "1.1"
-from: "jboss-eap-6/eap64-openshift:1.5"
+from: "jboss-eap-6/eap64-openshift:1.6"
 description: "Base image supporting `jboss-decisionserver-6/decisionserver64-openshift`. This is not currently released or supported as an independent image for end-users."
 user: 185
 labels:
