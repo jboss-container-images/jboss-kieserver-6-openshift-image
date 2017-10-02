@@ -1,8 +1,9 @@
+schema_version: 1
+
 name: "jboss-kieserver-6/kieserver64-openshift"
 version: "1.1"
 from: "jboss-eap-6/eap64-openshift:1.6"
 description: "Base image supporting `jboss-decisionserver-6/decisionserver64-openshift`. This is not currently released or supported as an independent image for end-users."
-user: 185
 labels:
     - name: "io.k8s.description"
       value: "Base platform for executing business rules and processes on JBoss BxMS KIE Server 6.4."
@@ -127,49 +128,43 @@ envs:
       description: "OpenShift KIE Server integration version."
 ports:
     - value: 8778
-cmd:
-    - "/opt/eap/bin/kieserver-launch.sh"
+modules:
+      repositories:
+          - git:
+                  url: https://github.com/jboss-openshift/cct_module.git
+                  ref: master
+      install:
+          - name: os-kieserver-launch
+          - name: os-kieserver-launch
+          - name: os-kieserver-probes
+          - name: os-kieserver-s2i
+          - name: os-kieserver-webapp
+          - name: os-kieserver-chmod
+          - name: os-java-run
 packages:
-    - PyYAML
-sources:
-    - artifact: jboss-bpmsuite-6.4.0.GA-deployable-eap6.x.zip
+      repositories:
+          - jboss-os
+          - jboss-rhscl
+      install:
+          - PyYAML
+artifacts:
+    - path: jboss-bpmsuite-6.4.0.GA-deployable-eap6.x.zip
       md5: 5621266e64f6ae1d6740940ec279a1ff
-    - artifact: jboss-bpmsuite-6.4.0.GA-supplementary-tools.zip
+    - path: jboss-bpmsuite-6.4.0.GA-supplementary-tools.zip
       md5: 423bbcbaaa487e7437785b077c4847e5
-    - artifact: jboss-bpmsuite-6.4.5-patch.zip
+    - path: jboss-bpmsuite-6.4.5-patch.zip
       md5: 2cbda304ddcd4c3c848da296d01425d6
-    - artifact: openshift-kieserver-common-1.2.0.Final-redhat-1.jar
+    - path: openshift-kieserver-common-1.2.0.Final-redhat-1.jar
       md5: 4eee0a1e2c0970362ffe65da45b44b1c
-    - artifact: openshift-kieserver-jms-1.2.0.Final-redhat-1.jar
+    - path: openshift-kieserver-jms-1.2.0.Final-redhat-1.jar
       md5: eb4d17234c5f949503082872e0d9601e
-    - artifact: openshift-kieserver-web-1.2.0.Final-redhat-1.jar
+    - path: openshift-kieserver-web-1.2.0.Final-redhat-1.jar
       md5: 86ef6f335f8d0a3779c0781a154f09b7
-dogen:
-    version: 2.4.4
-    plugins:
-        dist_git:
-            repo: jboss-kieserver-6-docker
+run:
+      user: 185
+      cmd:
+          - "/opt/eap/bin/kieserver-launch.sh"
+osbs:
+      repository:
+            name: jboss-kieserver-6-docker
             branch: ce-1.1-openshift-kieserver-6.4-jdk-8-rhel-7
-        cct:
-            verbose: true
-cct:
-    - name: kieserver
-      modules:
-          - url: https://github.com/jboss-openshift/cct_module
-      changes:
-          - cct_module.os-kieserver-launch:
-                - prepare_sh:
-          - cct_module.os-kieserver-launch:
-                - user: 185
-                - configure_sh:
-          - cct_module.os-kieserver-probes:
-                - prepare_sh:
-          - cct_module.os-kieserver-s2i:
-                - prepare_sh:
-          - cct_module.os-kieserver-webapp:
-                - user: 185
-                - configure_sh:
-          - cct_module.os-kieserver-chmod:
-                - run:
-          - cct_module.os-java-run:
-                - install_as_root:
