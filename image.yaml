@@ -47,7 +47,7 @@ envs:
       description: "BPM Executor interval. (optional)"
     - name: "KIE_SERVER_EXECUTOR_INITIAL_DELAY"
       example: "100"
-      description: "BPM Executor initial dealy. (optional)"
+      description: "BPM Executor initial delay. (optional)"
     - name: "KIE_SERVER_EXECUTOR_TIMEUNIT"
       example: "SECONDS"
       description: "BPM Executor timeunit. (optional)"
