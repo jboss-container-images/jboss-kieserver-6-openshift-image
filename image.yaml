@@ -1,7 +1,7 @@
 schema_version: 1
 
 name: "jboss-kieserver-6/kieserver64-openshift"
-version: "1.1"
+version: "1.2"
 from: "jboss-eap-6/eap64-openshift:1.6"
 description: "Base image supporting `jboss-decisionserver-6/decisionserver64-openshift`. This is not currently released or supported as an independent image for end-users."
 labels:
@@ -167,4 +167,4 @@ run:
 osbs:
       repository:
             name: jboss-kieserver-6-docker
-            branch: ce-1.1-openshift-kieserver-6.4-jdk-8-rhel-7
+            branch: ce-1.2-openshift-kieserver-6.4-jdk-8-rhel-7
