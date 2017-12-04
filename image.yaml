@@ -141,6 +141,7 @@ modules:
           - name: os-kieserver-webapp
           - name: os-kieserver-chmod
           - name: os-java-run
+          - name: jboss-maven
 packages:
       repositories:
           - jboss-os
