@@ -1,8 +1,8 @@
 schema_version: 1
 
 name: "jboss-kieserver-6/kieserver64-openshift"
-version: "1.1"
-from: "jboss-eap-6/eap64-openshift:1.6"
+version: "1.2"
+from: "jboss-eap-6/eap64-openshift:1.7"
 description: "Base image supporting `jboss-decisionserver-6/decisionserver64-openshift`. This is not currently released or supported as an independent image for end-users."
 labels:
     - name: "io.k8s.description"
@@ -47,7 +47,7 @@ envs:
       description: "BPM Executor interval. (optional)"
     - name: "KIE_SERVER_EXECUTOR_INITIAL_DELAY"
       example: "100"
-      description: "BPM Executor initial dealy. (optional)"
+      description: "BPM Executor initial delay. (optional)"
     - name: "KIE_SERVER_EXECUTOR_TIMEUNIT"
       example: "SECONDS"
       description: "BPM Executor timeunit. (optional)"
@@ -132,7 +132,7 @@ modules:
       repositories:
           - git:
                   url: https://github.com/jboss-openshift/cct_module.git
-                  ref: sprint-12
+                  ref: sprint-13
       install:
           - name: os-kieserver-launch
           - name: os-kieserver-launch
@@ -167,4 +167,4 @@ run:
 osbs:
       repository:
             name: jboss-kieserver-6-docker
-            branch: ce-1.1-openshift-kieserver-6.4-jdk-8-rhel-7
+            branch: ce-1.2-openshift-kieserver-6.4-jdk-8-rhel-7
