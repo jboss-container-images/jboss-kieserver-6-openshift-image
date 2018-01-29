@@ -132,7 +132,7 @@ modules:
       repositories:
           - git:
                   url: https://github.com/jboss-openshift/cct_module.git
-                  ref: master
+                  ref: sprint-13
       install:
           - name: os-kieserver-launch
           - name: os-kieserver-launch
