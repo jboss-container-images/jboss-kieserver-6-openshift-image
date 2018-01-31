@@ -141,6 +141,7 @@ modules:
           - name: os-kieserver-webapp
           - name: os-kieserver-chmod
           - name: os-java-run
+          - name: jboss-maven
 artifacts:
     - path: jboss-bpmsuite-6.3.0.GA-deployable-eap6.x.zip
       md5: 4e283717b0f295adf7025971065d6db8
