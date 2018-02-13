@@ -121,7 +121,7 @@ envs:
       value: "6.4.0.GA"
       description: "BPM Suite base installation version."
     - name: "BPMSUITE_PATCH_VERSION"
-      value: "6.4.7"
+      value: "6.4.8"
       description: "BPM Suite patch upgrade version."
     - name: "OPENSHIFT_KIESERVER_VERSION"
       value: "1.2.0.Final-redhat-1"
