@@ -153,8 +153,8 @@ artifacts:
       md5: 5621266e64f6ae1d6740940ec279a1ff
     - path: jboss-bpmsuite-6.4.0.GA-supplementary-tools.zip
       md5: 423bbcbaaa487e7437785b077c4847e5
-    - path: jboss-bpmsuite-6.4.7-patch.zip
-      md5: d8187a87a91ac4f09aff85e9f7273e3d
+    - path: jboss-bpmsuite-6.4.8-patch.zip
+      md5: 022b0f83cac3d617c173c6d1f8a4b019
     - path: openshift-kieserver-common-1.2.0.Final-redhat-1.jar
       md5: 4eee0a1e2c0970362ffe65da45b44b1c
     - path: openshift-kieserver-jms-1.2.0.Final-redhat-1.jar
