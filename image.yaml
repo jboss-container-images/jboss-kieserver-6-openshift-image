@@ -1,10 +1,12 @@
 schema_version: 1
 
 name: "jboss-kieserver-6/kieserver64-openshift"
-version: "1.2"
-from: "jboss-eap-6/eap64-openshift:1.7"
+version: "1.3"
+from: "jboss-eap-6/eap64-openshift:1.8"
 description: "Base image supporting `jboss-decisionserver-6/decisionserver64-openshift`. This is not currently released or supported as an independent image for end-users."
 labels:
+    - name: "com.redhat.component"
+      value: "jboss-kieserver-6-kieserver64-openshift-container"
     - name: "io.k8s.description"
       value: "Base platform for executing business rules and processes on JBoss BxMS KIE Server 6.4."
     - name: "io.k8s.display-name"
@@ -121,7 +123,7 @@ envs:
       value: "6.4.0.GA"
       description: "BPM Suite base installation version."
     - name: "BPMSUITE_PATCH_VERSION"
-      value: "6.4.7"
+      value: "6.4.9"
       description: "BPM Suite patch upgrade version."
     - name: "OPENSHIFT_KIESERVER_VERSION"
       value: "1.2.0.Final-redhat-1"
@@ -131,16 +133,20 @@ ports:
 modules:
       repositories:
           - git:
-                  url: https://github.com/jboss-openshift/cct_module.git
-                  ref: sprint-13
+              url: https://github.com/jboss-openshift/cct_module.git
+              ref: sprint-16
+          - git:
+              url: https://github.com/jboss-container-images/jboss-kie-modules.git
+              ref: master
       install:
-          - name: os-kieserver-launch
-          - name: os-kieserver-launch
-          - name: os-kieserver-probes
-          - name: os-kieserver-s2i
-          - name: os-kieserver-webapp
-          - name: os-kieserver-chmod
+          - name: os.kieserver.launch
+          - name: os.kieserver.launch
+          - name: os.kieserver.probes
+          - name: os.kieserver.s2i
+          - name: os.kieserver.webapp
+          - name: os.kieserver.chmod
           - name: os-java-run
+          - name: jboss-maven
 packages:
       repositories:
           - jboss-os
@@ -150,10 +156,10 @@ packages:
 artifacts:
     - path: jboss-bpmsuite-6.4.0.GA-deployable-eap6.x.zip
       md5: 5621266e64f6ae1d6740940ec279a1ff
-    - path: jboss-bpmsuite-6.4.0.GA-supplementary-tools.zip
-      md5: 423bbcbaaa487e7437785b077c4847e5
-    - path: jboss-bpmsuite-6.4.7-patch.zip
-      md5: d8187a87a91ac4f09aff85e9f7273e3d
+    - path: jboss-bpmsuite-6.4.9.GA-supplementary-tools.zip
+      md5: 0b6add72be1cd04c361b1d04ecc43779
+    - path: jboss-bpmsuite-6.4.9-patch.zip
+      md5: a24267deef7ace526c48c9ad8dae424d
     - path: openshift-kieserver-common-1.2.0.Final-redhat-1.jar
       md5: 4eee0a1e2c0970362ffe65da45b44b1c
     - path: openshift-kieserver-jms-1.2.0.Final-redhat-1.jar
@@ -166,5 +172,5 @@ run:
           - "/opt/eap/bin/kieserver-launch.sh"
 osbs:
       repository:
-            name: jboss-kieserver-6-docker
-            branch: ce-1.2-openshift-kieserver-6.4-jdk-8-rhel-7
+            name: containers/jboss-kieserver-6
+            branch: jb-kieserver-6.4-rhel-7
