@@ -149,12 +149,6 @@ modules:
           - name: os.kieserver.chmod
           - name: os-java-run
           - name: jboss-maven
-packages:
-      repositories:
-          - jboss-os
-          - jboss-rhscl
-      install:
-          - PyYAML
 artifacts:
     - path: jboss-bpmsuite-6.4.0.GA-deployable-eap6.x.zip
       md5: 5621266e64f6ae1d6740940ec279a1ff
