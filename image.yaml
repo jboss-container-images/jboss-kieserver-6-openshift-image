@@ -23,6 +23,9 @@ envs:
     - name: "KIE_CONTAINER_REDIRECT_ENABLED"
       example: "true"
       description: "Whether KIE Container alias ids will be redirected to generated deployment ids. (optional)"
+    - name: "KIE_JACKSON_DESERIALIZATION_WHITELIST"
+      example: "foo.bar.package,bar.foo.package"
+      description: "To protect EAP 6.4 from jackson databind deserialization vulnerabilities (CVE-2017-15095, CVE-2017-17485, CVE-2018-7489) it is possible to configure a whitelist of classes that can be serialised/deserialised. (optional)"
     - name: "KIE_SERVER_BPM_DISABLED"
       example: "false"
       description: "Whether to disable the BPM capability. (optional)"
@@ -139,7 +142,6 @@ modules:
               url: https://github.com/jboss-container-images/jboss-kie-modules.git
               ref: master
       install:
-          - name: os.kieserver.launch
           - name: os.kieserver.launch
           - name: os.kieserver.probes
           - name: os.kieserver.s2i
