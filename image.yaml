@@ -135,7 +135,8 @@ ports:
     - value: 8778
 modules:
       repositories:
-          - git:
+          - name: cct_module
+            git:
               url: https://github.com/jboss-openshift/cct_module.git
               ref: master
           - git:
@@ -147,8 +148,6 @@ modules:
           - name: os.kieserver.s2i
           - name: os.kieserver.webapp
           - name: os.kieserver.chmod
-          - name: os-java-run
-          - name: jboss-maven
 artifacts:
     - path: jboss-bpmsuite-6.4.0.GA-deployable-eap6.x.zip
       md5: 5621266e64f6ae1d6740940ec279a1ff
