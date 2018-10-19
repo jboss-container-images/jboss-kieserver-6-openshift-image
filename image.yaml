@@ -101,6 +101,9 @@ envs:
     - name: "KIE_SERVER_PERSISTENCE_DIALECT"
       example: "org.hibernate.dialect.MySQL5Dialect"
       description: "BPM Hibernate persistence dialect. (optional)"
+    - name: "KIE_SERVER_PERSISTENCE_SCHEMA"
+      example: "my.db.schema"
+      description: "BPM Hibernate persistence schema. (optional)"
     - name: "KIE_SERVER_PERSISTENCE_DS"
       example: "java:/jboss/datasources/ExampleDS"
       description: "BPM Hibernate persistence datasource; will default to DB_JNDI. (optional)"
@@ -129,7 +132,7 @@ envs:
       value: "6.4.11"
       description: "BPM Suite patch upgrade version."
     - name: "OPENSHIFT_KIESERVER_VERSION"
-      value: "1.2.0.Final-redhat-1"
+      value: "1.2.2.Final-redhat-1"
       description: "OpenShift KIE Server integration version."
 ports:
     - value: 8778
@@ -155,12 +158,14 @@ artifacts:
       md5: e6d8bd81a65bd7cb94fa2e03180811b7
     - path: jboss-bpmsuite-6.4.11-patch.zip
       md5: c6a4a7f6f323cc9c7313e9c3a68e432b
-    - path: openshift-kieserver-common-1.2.0.Final-redhat-1.jar
-      md5: 4eee0a1e2c0970362ffe65da45b44b1c
-    - path: openshift-kieserver-jms-1.2.0.Final-redhat-1.jar
-      md5: eb4d17234c5f949503082872e0d9601e
-    - path: openshift-kieserver-web-1.2.0.Final-redhat-1.jar
-      md5: 86ef6f335f8d0a3779c0781a154f09b7
+    - path: openshift-kieserver-common-1.2.2.Final-redhat-1.jar
+      md5: 80f367a257b14794cbc94628a4226641
+    - path: openshift-kieserver-jms-1.2.2.Final-redhat-1.jar
+      md5: 1399cb6ba612803f7662d63eb6c78022
+    - path: openshift-kieserver-web-1.2.2.Final-redhat-1.jar
+      md5: b6f5cbd3c17a761f95843d0410c5bc81
+    - path: quartz-oracle-1.8.5.jar
+      md5: c42d2570f34e80ab0ed668a6c9b4dcdc
 run:
       user: 185
       cmd:
