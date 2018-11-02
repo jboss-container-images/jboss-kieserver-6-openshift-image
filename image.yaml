@@ -142,7 +142,8 @@ modules:
             git:
               url: https://github.com/jboss-openshift/cct_module.git
               ref: sprint-16
-          - git:
+          - name: jboss-kie-modules
+            git:
               url: https://github.com/jboss-container-images/jboss-kie-modules.git
               ref: master
       install:
