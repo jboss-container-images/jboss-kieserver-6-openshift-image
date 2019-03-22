@@ -2,9 +2,15 @@ schema_version: 1
 
 name: "jboss-kieserver-6/kieserver64-openshift"
 description: "JBoss BxMS KIE Server 6.4 image not currently released or supported for end-users."
-version: "1.4"
+version: "1.5"
 from: "rhel7:7-released"
 labels:
+    - name: "org.jboss.product"
+      value: "kieserver"
+    - name: "org.jboss.product.version"
+      value: "6.4.11.GA"
+    - name: "org.jboss.product.kieserver.version"
+      value: "6.4.11.GA"
     - name: "com.redhat.component"
       value: "jboss-kieserver-6-kieserver64-openshift-container"
     - name: "io.k8s.description"
