@@ -18,7 +18,7 @@ envs:
     # value: ""
     # description: "BPM Suite patch upgrade version."
     - name: "OPENSHIFT_KIESERVER_VERSION"
-      value: "1.2.2.Final-redhat-1"
+      value: "1.2.3.Final-redhat-1"
       description: "OpenShift KIE Server integration version."
     - name: "STI_BUILDER"
       value: "jee"
@@ -187,12 +187,12 @@ artifacts:
       md5: e6d8bd81a65bd7cb94fa2e03180811b7
     - name: jboss-bxms-6.4.11-RHBPMS-5222.zip
       md5: bb2e5dbb70bbdf4b300115e67977c940
-    - name: openshift-kieserver-common-1.2.2.Final-redhat-1.jar
-      md5: 80f367a257b14794cbc94628a4226641
-    - name: openshift-kieserver-jms-1.2.2.Final-redhat-1.jar
-      md5: 1399cb6ba612803f7662d63eb6c78022
-    - name: openshift-kieserver-web-1.2.2.Final-redhat-1.jar
-      md5: b6f5cbd3c17a761f95843d0410c5bc81
+    - name: openshift-kieserver-common-1.2.3.Final-redhat-1.jar
+      md5: b312d0660fc885857f06d3100e8fb9b7
+    - name: openshift-kieserver-jms-1.2.3.Final-redhat-1.jar
+      md5: 0113abfc160119b4c7b504cefbd31023
+    - name: openshift-kieserver-web-1.2.3.Final-redhat-1.jar
+      md5: 3af139a0f8d9771907c5cff167adf16b
     - name: quartz-oracle-1.8.5.jar
       md5: c42d2570f34e80ab0ed668a6c9b4dcdc
     ###### Other modules' artifacts made plain (with 'name') so that they can be pulled from Brew
@@ -204,12 +204,12 @@ artifacts:
     - name: txn-recovery-marker-jdbc-hibernate4-1.1.2.Final-redhat-00001.jar
       md5: 8b6b26f587d5ef278a779ff5eef72e6c
     # os-eap64-ping:
-    - name: openshift-ping-common-1.2.3.Final-redhat-1.jar
-      md5: 2722e17d2b230184572b9e6539195c4d
-    - name: openshift-ping-dns-1.2.3.Final-redhat-1.jar
-      md5: a87fd933f56ef7619d9ca676e7a3d208
-    - name: openshift-ping-kube-1.2.3.Final-redhat-1.jar
-      md5: 3c8e75aad63eeb5379530d1ee76a4122
+    - name: openshift-ping-common-1.2.5.Final-redhat-1.jar
+      md5: 12b4f1e021e8d5b8ba199ee60faca008
+    - name: openshift-ping-dns-1.2.5.Final-redhat-1.jar
+      md5: df89212d776cdd3c64bc578c60173788
+    - name: openshift-ping-kube-1.2.5.Final-redhat-1.jar
+      md5: 1cbb306ba252a71ee2c4309910b459fc
     - name: oauth-20100527.jar
       md5: 91c7c70579f95b7ddee95b2143a49b41
     # jboss.eap.logging.ext
