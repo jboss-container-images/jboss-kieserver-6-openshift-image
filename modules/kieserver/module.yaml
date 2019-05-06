@@ -10,6 +10,11 @@ labels:
     - name: "io.openshift.s2i.scripts-url"
       value: "image:///usr/local/s2i"
 envs:
+    # TODO:
+    # 1. Update BPMSUITE_BASE_VERSION to 6.4.12.GA once we have a 6.4.12 version of jboss-bpmsuite-6.4.11.GA-deployable-eap6.x.zip
+    # 2. Update artifacts section below to 6.4.12, as well as references in cache-artifacts.sh
+    # 3. See if this patch can be removed: https://github.com/jboss-container-images/jboss-kie-modules/blob/master/os.kieserver.webapp/configure.sh#L64-L78
+    # 4. Remove this "TODO" section of 4 tasks
     - name: "BPMSUITE_BASE_VERSION"
       value: "6.4.11.GA"
       description: "BPM Suite base installation version."
