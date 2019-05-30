@@ -10,13 +10,8 @@ labels:
     - name: "io.openshift.s2i.scripts-url"
       value: "image:///usr/local/s2i"
 envs:
-    # TODO:
-    # 1. Update BPMSUITE_BASE_VERSION to 6.4.12.GA once we have a 6.4.12 version of jboss-bpmsuite-6.4.11.GA-deployable-eap6.x.zip
-    # 2. Update artifacts section below to 6.4.12, as well as references in cache-artifacts.sh
-    # 3. See if this patch can be removed: https://github.com/jboss-container-images/jboss-kie-modules/blob/master/os.kieserver.webapp/configure.sh#L64-L78
-    # 4. Remove this "TODO" section of 4 tasks
     - name: "BPMSUITE_BASE_VERSION"
-      value: "6.4.11.GA"
+      value: "6.4.12.GA"
       description: "BPM Suite base installation version."
     # no patch necessary (base version = latest)
     # name: "BPMSUITE_PATCH_VERSION"
@@ -186,12 +181,10 @@ modules:
           - name: os.kieserver.webapp
           - name: os.kieserver.chmod
 artifacts:
-    - name: jboss-bpmsuite-6.4.11.GA-deployable-eap6.x.zip
-      md5: 69b29d135d598ca9037a9e51c23b22f0
-    - name: jboss-brms-bpmsuite-6.4.11.GA-supplementary-tools.zip
-      md5: e6d8bd81a65bd7cb94fa2e03180811b7
-    - name: jboss-bxms-6.4.11-RHBPMS-5222.zip
-      md5: bb2e5dbb70bbdf4b300115e67977c940
+    - name: jboss-bpmsuite-6.4.12.GA-deployable-eap6.x.zip
+      md5: 0f3c347c4a6b25ebc40bc2ff72ecdc7b
+    - name: jboss-brms-bpmsuite-6.4.12.GA-supplementary-tools.zip
+      md5: c65d66563d4df1ff9b7437bbd50b9497
     - name: openshift-kieserver-common-1.2.3.Final-redhat-1.jar
       md5: b312d0660fc885857f06d3100e8fb9b7
     - name: openshift-kieserver-jms-1.2.3.Final-redhat-1.jar
@@ -209,23 +202,13 @@ artifacts:
     - name: txn-recovery-marker-jdbc-hibernate4-1.1.2.Final-redhat-00001.jar
       md5: 8b6b26f587d5ef278a779ff5eef72e6c
     # os-eap64-ping:
-    - name: openshift-ping-common-1.2.5.Final-redhat-1.jar
-      md5: 12b4f1e021e8d5b8ba199ee60faca008
-    - name: openshift-ping-dns-1.2.5.Final-redhat-1.jar
-      md5: df89212d776cdd3c64bc578c60173788
-    - name: openshift-ping-kube-1.2.5.Final-redhat-1.jar
-      md5: 1cbb306ba252a71ee2c4309910b459fc
     - name: oauth-20100527.jar
       md5: 91c7c70579f95b7ddee95b2143a49b41
     # jboss.eap.logging.ext
+    - name: javax.json-1.0.4.jar
+      md5: 569870f975deeeb6691fcb9bc02a9555
     - name: jboss-logmanager-ext-1.0.0.Alpha5-redhat-1.jar
       md5: 3c84f54725ea5657913cf6d1610798b0
-    # jboss.container.hawkular.bash
-    - name: hawkular-javaagent-1.0.1.Final-redhat-2-shaded.jar
-      md5: f97f623e5b614a7b6d1eb5ff7158027b
-    # jboss.container.prometheus.bash
-    - name: jmx_prometheus_javaagent-0.3.1.redhat-00006.jar
-      md5: 620d5c068e4ca408ad99c244f8706fce
 packages:
       content_sets_file: content_sets.yml
       install:
