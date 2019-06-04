@@ -47,6 +47,8 @@ modules:
           - path: modules
       install:
           - name: jboss-kieserver-6
+packages:
+      content_sets_file: content_sets.yml
 osbs:
       configuration:
           container_file: container.yaml
