@@ -182,9 +182,9 @@ modules:
           - name: os.kieserver.chmod
 artifacts:
     - name: jboss-bpmsuite-6.4.12.GA-deployable-eap6.x.zip
-      md5: 0f3c347c4a6b25ebc40bc2ff72ecdc7b
+      md5: 3208c2c2162e6e2b79d5f0b119109c59
     - name: jboss-brms-bpmsuite-6.4.12.GA-supplementary-tools.zip
-      md5: c65d66563d4df1ff9b7437bbd50b9497
+      md5: 777c1c99bb30cff5b550ca53771daa3b
     - name: openshift-kieserver-common-1.2.3.Final-redhat-1.jar
       md5: b312d0660fc885857f06d3100e8fb9b7
     - name: openshift-kieserver-jms-1.2.3.Final-redhat-1.jar
