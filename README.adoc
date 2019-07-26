@@ -1,10 +1,43 @@
 # JBoss BRMS/BPMSuite KIE Server (execution server) for OpenShift container image
 
-This is a base image for both link:https://github.com/jboss-container-images/jboss-decisionserver-6-openshift-image[BRMS Decision Server 6 OpenShift container image]
+This is an image example for both link:https://github.com/jboss-container-images/jboss-decisionserver-6-openshift-image[BRMS Decision Server 6 OpenShift container image]
 and link:https://github.com/jboss-container-images/jboss-processserver-6-openshift-image[BPMSuite Process Server 6 OpenShift container image].
-It is not currently released or supported as an independent image for end-users. 
+It is not currently released or supported as an independent image for end-users, but instead serves as a home for reusalbe RHDS and RHIPS KIE modules
 
-NOTE: Extends link:https://github.com/jboss-container-images/jboss-eap-6-openshift-image[jboss-eap-6-openshift-image]
+NOTE: Extends "rhel7:7-released"
+
+
+# JBoss 6.4.x RHDS and RHIPS Modules
+
+Here are located all CeKit modules, all the modules that will be used to configure and build the images are placed here.
+These modules are copied into the container at build time. There are also external dependencies, like jboss-eap-modules,
+cct_modules, etc.; all **external** modules can be found on the modules section of the image.yaml file descriptor for each image.
+
+Below, all CeKit modules contained in this repository:
+
+jboss-kieserver-6-openshift-image \
+├── [jboss-kieserver](jboss-kieserver): The main module that references the others. \
+├── [jboss-kieserver-chmod](jboss-kieserver-chmod): Process/Decision Server module. \
+├── [jboss-kieserver-launch](jboss-kieserver-launch): Process/Decision Server module. \
+├── [jboss-kieserver-probes](jboss-kieserver-probes): Process/Decision liveness and readineses probes. \
+├── [jboss-kieserver-s2i](jboss-kieserver-s2i): Process/Decision Server module. \
+├── [jboss-kieserver-webapp](jboss-kieserver-webapp): Process/Decision Server module. \
+├── [tests](tests): \
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── [arquillian](tests/arquillian): Integrations tests based on Arquillian Cube (IPS/DS 6.4.x). \
+
+
+## Tests
+
+There are three different kind of tests: bats, arquillian and behave which are described in details in the next topics.
+
+
+### Running Arquillian tests
+
+The arquillian is a more complete test, which runs a end to end test: reads an application template, deploys it on an
+OpenShift Cluster, completes some tasks, like fire rules, start process, etc. then stops the RHDM/PAM and clean up all
+the resources created to run the tests (it is only available for bxms 6.4 yet).
+All the needed details and info about how to run these tests are described [here](tests/arquillian/kieserver/64/README.md)
+
 
 # License
 

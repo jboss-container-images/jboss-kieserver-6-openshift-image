@@ -1,0 +1,6 @@
+schema_version: 1
+name: jboss-kieserver-probes
+version: "6.4"
+description: Legacy jboss-kieserver-probes script package.
+execute:
+- script: configure.sh

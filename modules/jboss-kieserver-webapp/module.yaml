@@ -1,0 +1,6 @@
+schema_version: 1
+name: jboss-kieserver-webapp
+version: "6.4"
+description: Legacy jboss-kieserver-webapp script package.
+execute:
+- script: configure.sh

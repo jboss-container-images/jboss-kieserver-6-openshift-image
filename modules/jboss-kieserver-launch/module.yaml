@@ -1,0 +1,6 @@
+schema_version: 1
+name: jboss-kieserver-launch
+version: "6.4"
+description: Legacy jboss-kieserver-launch script package.
+execute:
+- script: configure.sh

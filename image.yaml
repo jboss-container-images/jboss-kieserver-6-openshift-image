@@ -40,13 +40,10 @@ modules:
             git:
                   url: https://github.com/jboss-container-images/jboss-eap-6-image.git
                   ref: eap64-dev
-          - name: jboss-kie-modules
-            git:
-                  url: https://github.com/jboss-container-images/jboss-kie-modules.git
-                  ref: master
           - path: modules
       install:
-          - name: jboss-kieserver-6
+          - name: jboss-kieserver
+            version: "6.4"
 packages:
       content_sets_file: content_sets.yml
 osbs:
