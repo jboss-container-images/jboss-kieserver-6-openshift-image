@@ -1,6 +1,7 @@
 schema_version: 1
 
-name: "jboss-kieserver-6"
+name: "jboss-kieserver"
+version: "6.4"
 description: "JBoss BxMS KIE Server 6.4 install"
 labels:
     - name: "io.openshift.expose-services"
@@ -174,12 +175,17 @@ modules:
           - name: openshift-passwd
           - name: os-logging
           - name: jboss.container.eap.prometheus.config
-            version: '6.4'
-          - name: os.kieserver.launch
-          - name: os.kieserver.probes
-          - name: os.kieserver.s2i
-          - name: os.kieserver.webapp
-          - name: os.kieserver.chmod
+            version: "6.4"
+          - name: jboss-kieserver-launch
+            version: "6.4"
+          - name: jboss-kieserver-probes
+            version: "6.4"
+          - name: jboss-kieserver-s2i
+            version: "6.4"
+          - name: jboss-kieserver-webapp
+            version: "6.4"
+          - name: jboss-kieserver-chmod
+            version: "6.4"
 artifacts:
     - name: jboss-bpmsuite-6.4.12.GA-deployable-eap6.x.zip
       md5: 3208c2c2162e6e2b79d5f0b119109c59
