@@ -41,7 +41,7 @@
         <version.javax.jpa>1.0.1.Final</version.javax.jpa>
         <version.javassist>3.19.0-GA</version.javassist>
 
-        <version.junit>4.12</version.junit>
+        <version.junit>4.13.1</version.junit>
         <!-- KIE versions -->
         <version.jboss.bom.brms>6.4.11.GA-redhat-2</version.jboss.bom.brms>
         <version.org.kie>6.4.0.Final-redhat-13</version.org.kie>
